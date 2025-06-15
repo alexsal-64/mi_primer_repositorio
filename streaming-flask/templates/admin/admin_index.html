@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Administrador - Películas</h1>
+<ul>
+    {% for pelicula in peliculas %}
+        <li>
+            <strong>{{ pelicula.titulo }}</strong> ({{ pelicula.anio }})<br>
+            {{ pelicula.descripcion }}
+        </li>
+    {% else %}
+        <li>No hay películas en la base de datos.</li>
+    {% endfor %}
+</ul>
+
+<h2>Agregar nueva película</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.titulo.label }}<br>
+        {{ form.titulo(size=40) }}
+    </p>
+    <p>
+        {{ form.descripcion.label }}<br>
+        {{ form.descripcion(size=60) }}
+    </p>
+    <p>
+        {{ form.anio.label }}<br>
+        {{ form.anio() }}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

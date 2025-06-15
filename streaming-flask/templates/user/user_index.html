@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Películas</h1>
+<ul>
+    {% for pelicula in peliculas %}
+        <li>
+            <strong>{{ pelicula.titulo }}</strong> ({{ pelicula.anio }})<br>
+            {{ pelicula.descripcion }}
+        </li>
+    {% else %}
+        <li>No hay películas en la base de datos.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Streaming Flask</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('user.user_index') }}">Usuario</a> |
+        <a href="{{ url_for('admin.admin_index') }}">Administrador</a>
+        
+    </nav>
+    <hr>
+    {% block content %}aqui{% endblock %}
+</body>
+</html>
